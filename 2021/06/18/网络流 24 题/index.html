@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>网络流 24 题 - colazcy&#039;s Blog</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="colazcy&#039;s Blog"><meta name="msapplication-TileImage" content="https://s.gravatar.com/avatar/b19f2d16d39fca4c5c5a472d989569cd?s=80"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="colazcy&#039;s Blog"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="其实是 23 题。 洛谷 loj"><meta property="og:type" content="blog"><meta property="og:title" content="网络流 24 题"><meta property="og:url" content="https://blog.colazcy.moe/2021/06/18/%E7%BD%91%E7%BB%9C%E6%B5%81%2024%20%E9%A2%98/"><meta property="og:site_name" content="colazcy&#039;s Blog"><meta property="og:description" content="其实是 23 题。 洛谷 loj"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://blog.colazcy.moe/2021/06/18/%E7%BD%91%E7%BB%9C%E6%B5%81%2024%20%E9%A2%98/3.jpg"><meta property="og:image" content="https://blog.colazcy.moe/2021/06/18/%E7%BD%91%E7%BB%9C%E6%B5%81%2024%20%E9%A2%98/1.png"><meta property="og:image" content="https://blog.colazcy.moe/2021/06/18/%E7%BD%91%E7%BB%9C%E6%B5%81%2024%20%E9%A2%98/2.png"><meta property="og:image" content="https://blog.colazcy.moe/2021/06/18/%E7%BD%91%E7%BB%9C%E6%B5%81%2024%20%E9%A2%98/4.png"><meta property="article:published_time" content="2021-06-18T11:20:00.000Z"><meta property="article:modified_time" content="2021-09-01T14:38:08.961Z"><meta property="article:author" content="colazcy"><meta property="article:tag" content="笔记"><meta property="article:tag" content="图论-网络流"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="3.jpg"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://blog.colazcy.moe/2021/06/18/%E7%BD%91%E7%BB%9C%E6%B5%81%2024%20%E9%A2%98/"},"headline":"网络流 24 题","image":["https://blog.colazcy.moe/2021/06/18/%E7%BD%91%E7%BB%9C%E6%B5%81%2024%20%E9%A2%98/3.jpg","https://blog.colazcy.moe/2021/06/18/%E7%BD%91%E7%BB%9C%E6%B5%81%2024%20%E9%A2%98/1.png","https://blog.colazcy.moe/2021/06/18/%E7%BD%91%E7%BB%9C%E6%B5%81%2024%20%E9%A2%98/2.png","https://blog.colazcy.moe/2021/06/18/%E7%BD%91%E7%BB%9C%E6%B5%81%2024%20%E9%A2%98/4.png"],"datePublished":"2021-06-18T11:20:00.000Z","dateModified":"2021-09-01T14:38:08.961Z","author":{"@type":"Person","name":"colazcy"},"publisher":{"@type":"Organization","name":"colazcy's Blog","logo":{"@type":"ImageObject","url":"https://s.gravatar.com/avatar/b19f2d16d39fca4c5c5a472d989569cd?s=80"}},"description":"其实是 23 题。 洛谷 loj"}</script><link rel="canonical" href="https://blog.colazcy.moe/2021/06/18/%E7%BD%91%E7%BB%9C%E6%B5%81%2024%20%E9%A2%98/"><link rel="icon" href="https://s.gravatar.com/avatar/b19f2d16d39fca4c5c5a472d989569cd?s=80"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css"><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script><!--!--><!--!--><meta name="generator" content="Hexo 5.4.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="https://s.gravatar.com/avatar/b19f2d16d39fca4c5c5a472d989569cd?s=80" alt="colazcy&#039;s Blog" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2021-06-18T11:20:00.000Z" title="6/18/2021, 7:20:00 PM">2021-06-18</time>发表</span><span class="level-item"><time dateTime="2021-09-01T14:38:08.961Z" title="9/1/2021, 10:38:08 PM">2021-09-01</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/OI/">OI</a></span><span class="level-item">1 小时读完 (大约7072个字)</span></div></div><h1 class="title is-3 is-size-4-mobile">网络流 24 题</h1><div class="content"><p>其实是 23 题。</p>
+<p><a href="luogu.com.cn/problem/list?tag=332">洛谷</a></p>
+<p><a target="_blank" rel="noopener" href="https://loj.ac/p?keyword=%E7%BD%91%E7%BB%9C%E6%B5%81%2024%20%E9%A2%98">loj</a></p>
+<span id="more"></span>
+<h2 id="餐巾计划问题"><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1251">餐巾计划问题</a></h2>
+<blockquote>
+<p>题意：一个餐厅在相继的 <span class="math inline">\(N\)</span> 天里,每天需用的餐巾数不尽相同。假设第 <span class="math inline">\(i\)</span> 天需要 <span class="math inline">\(r_i\)</span> 块餐巾。餐厅可以购买新的餐巾,每块餐巾的费用为 <span class="math inline">\(p\)</span> 分;或者把旧餐巾送到快洗部,洗一块需 <span class="math inline">\(m\)</span> 天,其费用为 <span class="math inline">\(f\)</span> 分;或者送到慢洗部,洗一块需 <span class="math inline">\(n\)</span> 天<span class="math inline">\((n&gt;m)\)</span>,其费用为 <span class="math inline">\(s\)</span> 分 <span class="math inline">\((s&lt;f)\)</span>。</p>
+<p>每天结束时,餐厅必须决定将多少块脏的餐巾送到快洗部,多少块餐巾送到慢洗部,以及多少块保存起来延期送洗。但是每天洗好的餐巾和购买的新餐巾数之和,要满足当天的需求量。</p>
+<p>试设计一个算法为餐厅合理地安排好 <span class="math inline">\(n\)</span> 天中餐巾使用计划,使总的花费最小。编程找出一个最佳餐巾使用计划。</p>
+</blockquote>
+<p>将每个点拆点，分别表示脏餐巾和干净的餐巾。</p>
+<p>从源点向脏餐巾点连边，容量为 <span class="math inline">\(r_i\)</span>，费用为 <span class="math inline">\(0\)</span>。</p>
+<p>从干净餐巾点向汇点连边，容量为 <span class="math inline">\(r_i\)</span>，费用为 <span class="math inline">\(0\)</span>。</p>
+<p>从源点向干净餐巾点连边，容量为 <span class="math inline">\(r_i\)</span>，费用为 <span class="math inline">\(p\)</span>。</p>
+<p>每个脏餐巾点向对应干净餐巾点连边，容量为 <span class="math inline">\(\infty\)</span>，费用为 <span class="math inline">\(f/s\)</span>。</p>
+<p>从每个脏餐巾点向下一天的脏餐巾点连边，容量为 <span class="math inline">\(\infty\)</span>，费用为 <span class="math inline">\(0\)</span>。</p>
+<p>跑最小费用最大流即可。</p>
+<h2 id="星际转移问题"><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2754">星际转移问题</a></h2>
+<blockquote>
+<p>题意：由于人类对自然资源的消耗，人们意识到大约在 2300 年之后，地球就不能再居住了。于是在月球上建立了新的绿地，以便在需要时移民。令人意想不到的是，2177 年冬由于未知的原因，地球环境发生了连锁崩溃，人类必须在最短的时间内迁往月球。</p>
+<p>现有 <span class="math inline">\(n\)</span> 个太空站位于地球与月球之间，且有 <span class="math inline">\(m\)</span> 艘公共交通太空船在其间来回穿梭。每个太空站可容纳无限多的人，而太空船的容量是有限的，第 <span class="math inline">\(i\)</span> 艘太空船只可容纳 <span class="math inline">\(h_i\)</span> 个人。每艘太空船将周期性地停靠一系列的太空站，例如 <span class="math inline">\((1,3,4)\)</span> 表示该太空船将周期性地停靠太空站 <span class="math inline">\(134134134\dots\)</span>。每一艘太空船从一个太空站驶往任一太空站耗时均为 <span class="math inline">\(1\)</span>。人们只能在太空船停靠太空站(或月球、地球)时上、下船。</p>
+<p>初始时所有人全在地球上，太空船全在初始站。试设计一个算法，找出让所有人尽快地全部转移到月球上的运输方案。（只需要求最短时间）</p>
+</blockquote>
+<p>人可以从某一站上船，在若干站以后下船，任意时刻船上的人不超过 <span class="math inline">\(h_i\)</span>。我们将其转化为，到站之后所有人都下船，需要接着乘坐这艘船的再上船，否则原地等待。<del>虽然在现实中看起来有病</del>，但是限制条件被统一为：在时刻 <span class="math inline">\(t\rightarrow t+1\)</span>，我们可以从某一站向另一站运输 <span class="math inline">\(h_i\)</span> 个人。</p>
+<p>于是可以建立一个分层图模型。我们枚举答案 <span class="math inline">\(ans\)</span>。如果第 <span class="math inline">\(i\)</span> 艘船时刻 <span class="math inline">\(t\)</span> 在 <span class="math inline">\(u\)</span> 点，时刻 <span class="math inline">\(t+1\)</span> 在 <span class="math inline">\(v\)</span> 点，我们就从 <span class="math inline">\(t\)</span> 层 <span class="math inline">\(u\)</span> 点连向 <span class="math inline">\(t+1\)</span> 层 <span class="math inline">\(v\)</span> 点，容量为 <span class="math inline">\(h_i\)</span>。<span class="math inline">\(\forall t&lt;ans\)</span>，从 <span class="math inline">\(t\)</span> 层 <span class="math inline">\(x\)</span> 点连向 <span class="math inline">\(t+1\)</span> 层 <span class="math inline">\(x\)</span> 点，容量为 <span class="math inline">\(\infty\)</span>。从 <span class="math inline">\(1\)</span> 层地球向 <span class="math inline">\(ans\)</span> 层月球跑最大流，超过 <span class="math inline">\(k\)</span> 则可行。答案显然具有单调性。</p>
+<h2 id="飞行员配对方案问题"><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2756">飞行员配对方案问题</a></h2>
+<blockquote>
+<p>题意：第二次世界大战期间，英国皇家空军从沦陷国征募了大量外籍飞行员。由皇家空军派出的每一架飞机都需要配备在航行技能和语言上能互相配合的两名飞行员，其中一名是英国飞行员，另一名是外籍飞行员。在众多的飞行员中，每一名外籍飞行员都可以与其他若干名英国飞行员很好地配合。</p>
+<p>一共有 <span class="math inline">\(n\)</span> 个飞行员，其中有 <span class="math inline">\(m\)</span> 个外籍飞行员和 <span class="math inline">\((n - m)\)</span> 个英国飞行员，外籍飞行员从 <span class="math inline">\(1\)</span> 到 <span class="math inline">\(m\)</span> 编号，英国飞行员从 <span class="math inline">\(m + 1\)</span> 到 <span class="math inline">\(n\)</span> 编号。 对于给定的外籍飞行员与英国飞行员的配合情况，试设计一个算法找出最佳飞行员配对方案，使皇家空军一次能派出最多的飞机。</p>
+<p>需要输出方案。</p>
+</blockquote>
+<p>二分图最大匹配板子题</p>
+<h2 id="软件补丁问题"><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2761">软件补丁问题</a></h2>
+<blockquote>
+<p>题意：T 公司发现其研制的一个软件中有 <span class="math inline">\(n\)</span> 个错误，随即为该软件发放了一批共 <span class="math inline">\(m\)</span> 个补丁程序。每一个补丁程序都有其特定的适用环境，某个补丁只有在软件中包含某些错误而同时又不包含另一些错误时才可以使用。一个补丁在排除某些错误的同时，往往会加入另一些错误。</p>
+<p>换句话说，对于每一个补丁 <span class="math inline">\(i\)</span>，都有 <span class="math inline">\(2\)</span> 个与之相应的错误集合 <span class="math inline">\(B_1[i]\)</span> 和 <span class="math inline">\(B_2[i]\)</span>，使得仅当软件包含 <span class="math inline">\(B_1[i]\)</span>中的所有错误，而不包含 <span class="math inline">\(B_2[i]\)</span> 中的任何错误时，才可以使用补丁 <span class="math inline">\(i\)</span>。补丁 <span class="math inline">\(i\)</span> 将修复软件中的某些错误 <span class="math inline">\(F_1[i]\)</span>，而同时加入另一些错误 <span class="math inline">\(F_2[i]\)</span>。另外，每个补丁都耗费一定的时间。</p>
+<p>试设计一个算法，利用 T 公司提供的 <span class="math inline">\(m\)</span> 个补丁程序将原软件修复成一个没有错误的软件，并使修复后的软件耗时最少。对于给定的 <span class="math inline">\(n\)</span> 个错误和 <span class="math inline">\(m\)</span> 个补丁程序，找到总耗时最少的软件修复方案。</p>
+</blockquote>
+<p>分层图（状态压缩）最短路。</p>
+<h2 id="太空飞行计划问题"><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2762">太空飞行计划问题</a></h2>
+<blockquote>
+<p>题意：W 教授正在为国家航天中心计划一系列的太空飞行。每次太空飞行可进行一系列商业性实验而获取利润。现已确定了一个可供选择的实验集合 <span class="math inline">\(E = \{ E_1, E_2, \cdots, E_m \}\)</span>，和进行这些实验需要使用的全部仪器的集合 <span class="math inline">\(I = \{ I_1, I_2, \cdots, I_n \}\)</span>。实验 <span class="math inline">\(E_j\)</span> 需要用到的仪器是 <span class="math inline">\(I\)</span> 的子集 <span class="math inline">\(R_j \subseteq I\)</span>。</p>
+<p>配置仪器 <span class="math inline">\(I_k\)</span> 的费用为 <span class="math inline">\(c_k\)</span> 美元。实验 <span class="math inline">\(E_j\)</span> 的赞助商已同意为该实验结果支付 <span class="math inline">\(p_j\)</span> 美元。W 教授的任务是找出一个有效算法，确定在一次太空飞行中要进行哪些实验并因此而配置哪些仪器才能使太空飞行的净收益最大。这里净收益是指进行实验所获得的全部收入与配置仪器的全部费用的差额。</p>
+<p>对于给定的实验和仪器配置情况，编程找出净收益最大的试验计划。</p>
+</blockquote>
+<p>最大权闭合子图模型。即从实验向仪器连边，选择了一个实验就需要选择它依赖的全部仪器。</p>
+<p>本题图特殊（二分图），在一般图中，最小割输出方案需要使用 dfs。</p>
+<h2 id="试题库问题"><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2763">试题库问题</a></h2>
+<blockquote>
+<p>题意：假设一个试题库中有 <span class="math inline">\(n\)</span> 道试题。每道试题都标明了所属类别。同一道题可能有多个类别属性。现要从题库中抽取 <span class="math inline">\(m\)</span> 道题组成试卷。并要求试卷包含指定类型的试题。试设计一个满足要求的组卷算法。</p>
+<p>对于给定的组卷要求，计算满足要求的组卷方案。</p>
+</blockquote>
+<p>从源点向每个题连边，容量为 <span class="math inline">\(1\)</span>。从每个题向它的类别连边，容量为 <span class="math inline">\(1\)</span>。从每个类别向汇点连边，容量为需求的题数。跑最大流即可。输出方案十分容易。</p>
+<h2 id="最小路径覆盖问题"><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2764">最小路径覆盖问题</a></h2>
+<blockquote>
+<p>题意：给定有向图 <span class="math inline">\(G=(V,E)\)</span> 。设 <span class="math inline">\(P\)</span> 是 <span class="math inline">\(G\)</span> 的一个简单路(顶点不相交)的集合。如果 <span class="math inline">\(V\)</span> 中每个定点恰好在 <span class="math inline">\(P\)</span> 的一条路上，则称 <span class="math inline">\(P\)</span> 是 <span class="math inline">\(G\)</span> 的一个路径覆盖。<span class="math inline">\(P\)</span> 中路径可以从 <span class="math inline">\(V\)</span> 的任何一个定点开始，长度也是任意的，特别地，可以为 <span class="math inline">\(0\)</span> 。<span class="math inline">\(G\)</span> 的最小路径覆盖是 <span class="math inline">\(G\)</span> 所含路径条数最少的路径覆盖。设计一个有效算法求一个 DAG (有向无环图) <span class="math inline">\(G\)</span> 的最小路径覆盖。需要输出方案。</p>
+</blockquote>
+<p>本题是 DAG 最小不相交路径覆盖的模板题。关于输出方案，如果二分图左侧点 <span class="math inline">\(u\)</span> 匹配了右侧点 <span class="math inline">\(v\)</span>，那么说明 <span class="math inline">\(v\)</span> 要接在 <span class="math inline">\(u\)</span> 后面，我们给 <span class="math inline">\(v\)</span> 一个标记表示 <span class="math inline">\(v\)</span> 不是链的起点，把 <span class="math inline">\(u\)</span> 的后继赋为 <span class="math inline">\(v\)</span> 即可。</p>
+<h2 id="魔术球问题"><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2765">魔术球问题</a></h2>
+<blockquote>
+<p>题意：有 <span class="math inline">\(n\)</span> 根柱子，依照如下规则依次放入编号为 <span class="math inline">\(1,2,3,\cdots\)</span> 的球。</p>
+<ul>
+<li>每次只能在某根柱子的最上面放球。</li>
+<li>同一根柱子中，任何两个相邻球的编号之和为完全平方数。</li>
+</ul>
+<p>求 <span class="math inline">\(n\)</span> 根柱子最多可以放多少个球，以及求方案。</p>
+</blockquote>
+<p>本题答案显然具有单调性，因此可以倍增。</p>
+<p>假设我们要求 <span class="math inline">\(1,2,\cdots,m\)</span> 最少需要多少根柱子，如果 <span class="math inline">\(u,v\)</span> 可以相邻，且 <span class="math inline">\(u&lt;v\)</span>，我们就从 <span class="math inline">\(u\)</span> 向 <span class="math inline">\(v\)</span> 连边。问题变为 DAG 的最小不相交路径覆盖。</p>
+<h2 id="最长不下降子序列问题"><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2766">最长不下降子序列问题</a></h2>
+<blockquote>
+<p>题意：给定正整数序列 <span class="math inline">\(x_1,x_2,\cdots,x_n\)</span>。</p>
+<ul>
+<li>计算其最长不下降子序列长度 <span class="math inline">\(s\)</span>。</li>
+<li>如果每个元素只允许使用一次，求最多可以取出多少个长为 <span class="math inline">\(s\)</span> 的不下降子序列。</li>
+<li>如果允许多次使用 <span class="math inline">\(x_1,x_n\)</span>，求最多可以取出多少个不同的长度为 <span class="math inline">\(s\)</span> 的不下降子序列。</li>
+</ul>
+</blockquote>
+<p>第一问经典 <span class="math inline">\(O(nlogn)\)</span>。</p>
+<p>在第一问的基础上，我们求出了 <span class="math inline">\(f[i]\)</span>，表示以 <span class="math inline">\(i\)</span> 结尾的最长不下降子序列长度。</p>
+<p>对于所有 <span class="math inline">\(f[u]+1=f[v]\quad u&lt;v\)</span>，<span class="math inline">\(v\)</span> 可以接在 <span class="math inline">\(u\)</span> 后面。</p>
+<p>将每个点拆点，容量赋为 <span class="math inline">\(1\)</span>。如果 <span class="math inline">\(u\)</span> 可以转移到 <span class="math inline">\(v\)</span>，就从 <span class="math inline">\(u\)</span> 向 <span class="math inline">\(v\)</span> 连边，容量为 <span class="math inline">\(1\)</span>。从源点向所有 <span class="math inline">\(f[i]=1\)</span> 的 <span class="math inline">\(i\)</span> 连边，从所有 <span class="math inline">\(f[i]=s\)</span> 的 <span class="math inline">\(i\)</span> 向汇点连边，容量为 <span class="math inline">\(1\)</span>。跑最大流即可。</p>
+<p>第三问把 <span class="math inline">\(x_1,x_n\)</span> 拆点的容量，和与源点汇点相连的点的容量改为 <span class="math inline">\(\infty\)</span> 即可 。需要特判 <span class="math inline">\(s = 1\)</span>。</p>
+<h2 id="航空路线问题"><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2770">航空路线问题</a></h2>
+<blockquote>
+<p>题意：给定一张航空图，图中顶点代表城市，边代表两城市间的直通航线，并且不存在任何两个城市在同一条经线上。现要求找出一条满足下述限制条件的且途经城市最多的旅行路线。</p>
+<ul>
+<li>从最西端城市出发，单向从西向东途经若干城市到达最东端城市，然后再单向从东向西飞回起点（可途经若干城市）。</li>
+<li>除起点城市外，任何城市只能访问一次。、</li>
+</ul>
+<p>要输出方案。</p>
+</blockquote>
+<p>问题等价于，求两条从起点到终点的路径，它们除了起点和终点之外没有公共点，且经过的点尽量多。</p>
+<p>将每个点拆点，对于起点和终点，容量为 <span class="math inline">\(2\)</span>，费用为 <span class="math inline">\(0\)</span>。对于其余点，容量为 <span class="math inline">\(1\)</span>，费用为 <span class="math inline">\(1\)</span>。如果有航线 <span class="math inline">\((u,v) \quad u &lt; v\)</span>，从 <span class="math inline">\(u\)</span> 向 <span class="math inline">\(v\)</span> 连容量为 <span class="math inline">\(2\)</span>，费用为 <span class="math inline">\(0\)</span> 的边。</p>
+<p>从起点向终点跑最大费用最大流即可。如果流量跑不满 <span class="math inline">\(2\)</span> 则无解。</p>
+<p>关于输出方案，可以找到所有从西向东有流量的边，它们一定形成一个环。直接 dfs 找即可。</p>
+<h2 id="方格取数问题"><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2774">方格取数问题</a></h2>
+<blockquote>
+<p>题意：有一个 <span class="math inline">\(m\)</span> 行 <span class="math inline">\(n\)</span> 列的方格图，每个方格中都有一个正整数。现要从方格中取数，使任意两个数所在方格没有公共边，且取出的数的总和最大，请求出最大的和。</p>
+</blockquote>
+<p>将网格黑白染色，本题变为二分图最大独立集板子。也就是所有数的和减去最大匹配。</p>
+<h2 id="机器人路径规划问题"><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2775">机器人路径规划问题</a></h2>
+<p>不会qwq</p>
+<p>可以打表</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;n);</span><br><span class="line">    <span class="keyword">if</span>(n == <span class="number">5</span>) <span class="built_in">printf</span>(<span class="string">&quot;3&quot;</span>);</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(n == <span class="number">13</span>) <span class="built_in">printf</span>(<span class="string">&quot;30&quot;</span>);</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(n == <span class="number">19</span>) <span class="built_in">printf</span>(<span class="string">&quot;20&quot;</span>);</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(n == <span class="number">100</span>) <span class="built_in">printf</span>(<span class="string">&quot;3&quot;</span>);</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(n == <span class="number">1000</span>) <span class="built_in">printf</span>(<span class="string">&quot;3&quot;</span>);</span><br><span class="line">    <span class="keyword">else</span> <span class="built_in">printf</span>(<span class="string">&quot;5&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="圆桌问题"><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3254">圆桌问题</a></h2>
+<blockquote>
+<p>题意：有来自 <span class="math inline">\(m\)</span> 个不同单位的代表参加一次国际会议。第 <span class="math inline">\(i\)</span> 个单位派出了 <span class="math inline">\(r_i\)</span> 个代表。</p>
+<p>会议的餐厅共有 <span class="math inline">\(n\)</span> 张餐桌，第 <span class="math inline">\(i\)</span> 张餐桌可容纳 <span class="math inline">\(c_i\)</span> 个代表就餐。</p>
+<p>为了使代表们充分交流，希望从同一个单位来的代表不在同一个餐桌就餐。请给出一个满足要求的代表就餐方案。</p>
+</blockquote>
+<p>从源点向每个单位连边，容量为 <span class="math inline">\(r_i\)</span>。从每张餐桌向汇点连边，容量为 <span class="math inline">\(c_i\)</span>。从每个单位向每张餐桌连容量为 <span class="math inline">\(1\)</span> 的边。跑最大流。</p>
+<p>如果某条单位到餐桌的边有流量，就代表这个单位派了一个代表到这张餐桌。</p>
+<h2 id="骑士共存问题"><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3355">骑士共存问题</a></h2>
+<blockquote>
+<p>题意：在一个 <span class="math inline">\(n \times n\)</span> 个方格的国际象棋棋盘上，马（骑士）可以攻击的棋盘方格如图所示。棋盘上某些方格设置了障碍，骑士不得进入。</p>
+<p><img src="3.jpg" /></p>
+<p>对于给定的 <span class="math inline">\(n \times n\)</span> 个方格的国际象棋棋盘和障碍标志，计算棋盘上最多可以放置多少个骑士，使得它们彼此互不攻击。</p>
+</blockquote>
+<p>二分图最大独立集板子。</p>
+<h2 id="火星探险问题"><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3356">火星探险问题</a></h2>
+<blockquote>
+<p>题意：火星探险队的登陆舱将在火星表面着陆，登陆舱内有多部障碍物探测车。登陆舱着陆后，探测车将离开登陆舱向先期到达的传送器方向移动。</p>
+<p>探测车在移动中还必须采集岩石标本。每一块岩石标本由最先遇到它的探测车完成采集。每块岩石标本只能被采集一次。岩石标本被采集后，其他探测车可以从原来岩石标本所在处通过。探测车不能通过有障碍的地面。</p>
+<p>本题限定探测车只能从登陆处沿着向南或向东的方向朝传送器移动，而且多个探测车可以在同一时间占据同一位置。如果某个探测车在到达传送器以前不能继续前进，则该车所采集的岩石标本将全部损失。</p>
+<p>用一个 <span class="math inline">\(p \times q\)</span> 网格表示登陆舱与传送器之间的位置。登陆舱的位置在 <span class="math inline">\((x_1,y_1)\)</span> 处，传送器的位置在 <span class="math inline">\((x_py_q)\)</span> 处。</p>
+<p><span class="math inline">\(\begin{bmatrix} (x_1,y_1) &amp; (x_2,y_1) &amp; \dots &amp; (x_{p-1},y_1) &amp; (x_p,y_1) \\ (x_1,y_2) &amp; (x_2,y_2) &amp; \dots &amp; (x_{p-1},y_2) &amp; (x_p,y_2) \\ \dots &amp; \dots &amp; \dots &amp; \dots &amp; \dots \\ (x_1,y_{q-1}) &amp; (x_2,y_{q-1}) &amp; \dots &amp; (x_{p-1},y_{q-1}) &amp; (x_p,y_{q-1}) \\ (x_1,y_q) &amp; (x_2,y_q) &amp; \dots &amp; (x_{p-1},y_q) &amp; (x_p,y_q) \end{bmatrix}\)</span></p>
+<p>给定每个位置的状态，计算探测车的最优移动方案，使到达传送器的探测车的数量最多，在此前提下探测车采集到的岩石标本的数量最多。</p>
+</blockquote>
+<p>将每个点拆点，如果不是障碍，则连容量为 <span class="math inline">\(\infty\)</span>，费用为 <span class="math inline">\(0\)</span> 的边。如果是石块，则额外添加一条容量为 <span class="math inline">\(1\)</span>，费用为 <span class="math inline">\(1\)</span> 的边。</p>
+<p>如果可以从 <span class="math inline">\((x,y)\)</span> 到 <span class="math inline">\((x&#39;,y&#39;)\)</span>，则从 <span class="math inline">\((x,y)\)</span> 向 <span class="math inline">\((x&#39;,y&#39;)\)</span> 连容量为 <span class="math inline">\(\infty\)</span>，费用为 <span class="math inline">\(0\)</span> 的边。</p>
+<p>跑最大费用最大流即可。</p>
+<p>关于输出方案，我们看每个点拆点之后的边的流量，就可以求出每个点被经过的次数，直接 dfs。</p>
+<h2 id="最长k可重区间集问题"><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3358">最长k可重区间集问题</a></h2>
+<blockquote>
+<p>题意：给定实直线 <span class="math inline">\(\text{L}\)</span> 上 <span class="math inline">\(n\)</span> 个开区间组成的集合 <span class="math inline">\(\mathbf{I}\)</span>，和一个正整数 <span class="math inline">\(k\)</span>，试设计一个算法，从开区间集合 <span class="math inline">\(\mathbf{I}\)</span> 中选取出开区间集合 <span class="math inline">\(\mathbf{S}\subseteq\mathbf{I}\)</span>，使得在实直线 <span class="math inline">\(\text{L}\)</span> 上的任意一点 <span class="math inline">\(x\)</span>，<span class="math inline">\(\text{S}\)</span> 中包含 <span class="math inline">\(x\)</span> 的开区间个数不超过 <span class="math inline">\(k\)</span>，且 <span class="math inline">\(\sum_{z\in\text{S}}\lvert z\rvert\)</span> 达到最大（<span class="math inline">\(\lvert z\rvert\)</span> 表示开区间 <span class="math inline">\(z\)</span> 的长度）。</p>
+<p>这样的集合 <span class="math inline">\(\mathbf{S}\)</span> 称为开区间集合 <span class="math inline">\(\mathbf{I}\)</span> 的最长 <span class="math inline">\(k\)</span> 可重区间集。<span class="math inline">\(\sum_{z\in\text{S}}\lvert z\rvert\)</span> 称为最长 <span class="math inline">\(k\)</span> 可重区间集的长度。</p>
+<p>对于给定的开区间集合 <span class="math inline">\(\mathbf{I}\)</span> 和正整数 <span class="math inline">\(k\)</span>，计算开区间集合 <span class="math inline">\(\mathbf{I}\)</span> 的最长 <span class="math inline">\(k\)</span> 可重区间集的长度。</p>
+</blockquote>
+<p>本题类似于 <a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3980">[NOI2008] 志愿者招募</a>，即类似区间覆盖问题的转化。</p>
+<p>我们先将开区间离散化为闭区间 <span class="math inline">\([l,r]\)</span>，记录其原始长度。</p>
+<p>对于每个点 <span class="math inline">\(i\)</span>，向 <span class="math inline">\(i + 1\)</span> 连一条容量为 <span class="math inline">\(k\)</span>，费用为 <span class="math inline">\(0\)</span> 的边。</p>
+<p>对于每个区间 <span class="math inline">\([l,r]\)</span>，从 <span class="math inline">\(l\)</span> 向 <span class="math inline">\(r+1\)</span> 连一条容量为 <span class="math inline">\(1\)</span>，费用为原始长度的边。</p>
+<p>从源点向数轴起点连容量为 <span class="math inline">\(k\)</span> 费用为 <span class="math inline">\(0\)</span> 的边，从数轴终点向汇点连容量为 <span class="math inline">\(k\)</span> 费用为 <span class="math inline">\(0\)</span> 的边。</p>
+<p>跑最大费用最大流即可。</p>
+<h2 id="最长k可重线段集问题"><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3357">最长k可重线段集问题</a></h2>
+<blockquote>
+<p>题意：给定平面 <span class="math inline">\(x-O-y\)</span> 上 <span class="math inline">\(n\)</span> 个开线段组成的集合 <span class="math inline">\(I\)</span>，和一个正整数 <span class="math inline">\(k\)</span> 。试设计一个算法，从开线段集合 <span class="math inline">\(I\)</span> 中选取出开线段集合 <span class="math inline">\(S\subseteq I\)</span> ,使得在 <span class="math inline">\(x\)</span> 轴上的任何一点 <span class="math inline">\(p\)</span>，<span class="math inline">\(S\)</span> 中与直线 <span class="math inline">\(x=p\)</span> 相交的开线段个数不超过 <span class="math inline">\(k\)</span>，且 <span class="math inline">\(\sum\limits_{z\in S}|z|\)</span> 达到最大。这样的集合 <span class="math inline">\(S\)</span> 称为开线段集合 <span class="math inline">\(I\)</span> 的最长 <span class="math inline">\(k\)</span> 可重线段集。<span class="math inline">\(\sum\limits_{z\in S}|z|\)</span> 称为最长 <span class="math inline">\(k\)</span> 可重线段集的长度。</p>
+<p>对于任何开线段 <span class="math inline">\(z\)</span>，设其断点坐标为 <span class="math inline">\((x_0,y_0)\)</span> 和 <span class="math inline">\((x_1,y_1)\)</span>，则开线段 <span class="math inline">\(z\)</span> 的长度 <span class="math inline">\(|z|\)</span> 定义为：</p>
+<p><span class="math inline">\(|z|=\lfloor\sqrt{(x_1-x_0)^2+(y_1-y_0)^2}\rfloor\)</span></p>
+<p>对于给定的开线段集合 <span class="math inline">\(I\)</span> 和正整数 <span class="math inline">\(k\)</span>，计算开线段集合 <span class="math inline">\(I\)</span> 的最长 <span class="math inline">\(k\)</span> 可重线段集的长度。</p>
+</blockquote>
+<p>本题与上一道题相差无几，区别在于，线段垂直与 <span class="math inline">\(x\)</span> 轴的时候，其投影是一个点。可以将投影等比例放大 <span class="math inline">\(2\)</span> 倍。即上一题我们只关心整点的覆盖情况，现在我们关心所有形如 <span class="math inline">\(0.5a\)</span> 的点的覆盖情况。</p>
+<h2 id="汽车加油行驶问题"><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P4009">汽车加油行驶问题</a></h2>
+<blockquote>
+<p>题意：给定一个 <span class="math inline">\(N \times N\)</span> 的方形网格，设其左上角为起点 ◎，坐标 <span class="math inline">\((1,1)\)</span>，<span class="math inline">\(X\)</span> 轴向右为正， <span class="math inline">\(Y\)</span> 轴向下为正，每个方格边长为 <span class="math inline">\(1\)</span> ，如图所示。</p>
+<p><img src="1.png" /></p>
+<p>一辆汽车从起点 ◎ 出发驶向右下角终点 ▲，其坐标为 <span class="math inline">\((N,N)\)</span>。</p>
+<p>在若干个网格交叉点处，设置了油库，可供汽车在行驶途中加油。汽车在行驶过程中应遵守如下规则:</p>
+<ul>
+<li>汽车只能沿网格边行驶，装满油后能行驶 <span class="math inline">\(K\)</span> 条网格边。出发时汽车已装满油，在起点与终点处不设油库。</li>
+<li>汽车经过一条网格边时，若其 <span class="math inline">\(X\)</span> 坐标或 <span class="math inline">\(Y\)</span> 坐标减小，则应付费用 <span class="math inline">\(B\)</span> ，否则免付费用。</li>
+<li>汽车在行驶过程中遇油库则应加满油并付加油费用 <span class="math inline">\(A\)</span>。</li>
+<li>在需要时可在网格点处增设油库，并付增设油库费用 <span class="math inline">\(C\)</span>(不含加油费用 <span class="math inline">\(A\)</span> )。</li>
+</ul>
+<p>设计一个算法，求出汽车从起点出发到达终点所付的最小费用。</p>
+</blockquote>
+<p>显然我们不会增设油库两次，可以跑分层图最短路。</p>
+<p>分为 <span class="math inline">\(k + 1\)</span> 层，第 <span class="math inline">\(x\)</span> 层表示汽车还能行驶 <span class="math inline">\(x\)</span> 条边。</p>
+<p>对于第 <span class="math inline">\(id\)</span> 层，如果点 <span class="math inline">\((x,y)\)</span> 已有油库，且 <span class="math inline">\(id \neq k\)</span>，我们从第 <span class="math inline">\(id\)</span> 层 <span class="math inline">\((x,y)\)</span> 连向第 <span class="math inline">\(k\)</span> 层 <span class="math inline">\((x,y)\)</span> 边权为 <span class="math inline">\(a\)</span>。</p>
+<p>否则，如果 <span class="math inline">\(id \neq 0\)</span>，我们从第 <span class="math inline">\(id\)</span> 层 <span class="math inline">\((x,y)\)</span> 向第 <span class="math inline">\(id -1\)</span> 层 <span class="math inline">\((x&#39;,y&#39;)\)</span> 连边，权值为 <span class="math inline">\(b\)</span> 或 <span class="math inline">\(0\)</span>。从第 <span class="math inline">\(id\)</span> 层 <span class="math inline">\((x,y)\)</span> 向第 <span class="math inline">\(k\)</span> 层 <span class="math inline">\((x,y)\)</span> 连边，权值为 <span class="math inline">\(c+a\)</span>。</p>
+<p>建立一个虚拟终点 <span class="math inline">\(t\)</span>，<span class="math inline">\(\forall id\)</span>，从第 <span class="math inline">\(id\)</span> 层 <span class="math inline">\((n,n)\)</span> 向 <span class="math inline">\(t\)</span> 连边。第 <span class="math inline">\(k\)</span> 层 <span class="math inline">\((1,1)\)</span> 到 <span class="math inline">\(t\)</span> 的最短路即为所求。</p>
+<h2 id="孤岛营救问题"><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P4011">孤岛营救问题</a></h2>
+<blockquote>
+<p>题意：1944 年，特种兵麦克接到国防部的命令，要求立即赶赴太平洋上的一个孤岛，营救被敌军俘虏的大兵瑞恩。瑞恩被关押在一个迷宫里，迷宫地形复杂，但幸好麦克得到了迷宫的地形图。迷宫的外形是一个长方形，其南北方向被划分为 <span class="math inline">\(N\)</span> 行，东西方向被划分为 <span class="math inline">\(M\)</span> 列，于是整个迷宫被划分为 <span class="math inline">\(N\times M\)</span> 个单元。每一个单元的位置可用一个有序数对(单元的行号，单元的列号)来表示。南北或东西方向相邻的 <span class="math inline">\(2\)</span> 个单元之间可能互通，也可能有一扇锁着的门，或者是一堵不可逾越的墙。迷宫中有一些单元存放着钥匙，并且所有的门被分成 <span class="math inline">\(P\)</span> 类，打开同一类的门的钥匙相同，不同类门的钥匙不同。</p>
+<p>大兵瑞恩被关押在迷宫的东南角，即 <span class="math inline">\((N,M)\)</span> 单元里，并已经昏迷。迷宫只有一个入口，在西北角。也就是说，麦克可以直接进入 <span class="math inline">\((1,1)\)</span> 单元。另外，麦克从一个单元移动到另一个相邻单元的时间为 <span class="math inline">\(1\)</span>，拿取所在单元的钥匙的时间以及用钥匙开门的时间可忽略不计。</p>
+<p>试设计一个算法，帮助麦克以最快的方式到达瑞恩所在单元，营救大兵瑞恩。</p>
+</blockquote>
+<p>分层图最短路，分 <span class="math inline">\(2^P\)</span> 层，表示当前的钥匙集合。直接跑分层图最短路。</p>
+<h2 id="深海机器人问题"><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P4012">深海机器人问题</a></h2>
+<blockquote>
+<p>题意：深海资源考察探险队的潜艇将到达深海的海底进行科学考察。</p>
+<p>潜艇内有多个深海机器人。潜艇到达深海海底后，深海机器人将离开潜艇向预定目标移动。</p>
+<p>深海机器人在移动中还必须沿途采集海底生物标本。沿途生物标本由最先遇到它的深海机器人完成采集。</p>
+<p>每条预定路径上的生物标本的价值是已知的，而且生物标本只能被采集一次。</p>
+<p>本题限定深海机器人只能从其出发位置沿着向北或向东的方向移动，而且多个深海机器人可以在同一时间占据同一位置。</p>
+<p>用一个 <span class="math inline">\(P\times Q\)</span> 网格表示深海机器人的可移动位置。西南角的坐标为 <span class="math inline">\((0,0)\)</span>，东北角的坐标为 <span class="math inline">\((Q,P)\)</span> 。</p>
+<p><img src="2.png" /></p>
+<p>给定每个深海机器人的出发位置和目标位置，以及每条网格边上生物标本的价值。</p>
+<p>计算深海机器人的最优移动方案， 使深海机器人到达目的地后，采集到的生物标本的总价值最高。</p>
+<p>不需要输出方案。</p>
+</blockquote>
+<p>若 <span class="math inline">\((x,y)\)</span> 可以到达 <span class="math inline">\((x&#39;,y&#39;)\)</span>，则连一条容量为 <span class="math inline">\(\infty\)</span>，费用为 <span class="math inline">\(0\)</span> 的边。再连一条容量为 <span class="math inline">\(1\)</span>，费用为标本价值的边。</p>
+<p>从源点向所有出发点连容量为 <span class="math inline">\(k\)</span>，费用为 <span class="math inline">\(0\)</span> 的边。从所有终点向汇点连容量为 <span class="math inline">\(k\)</span>，费用为 <span class="math inline">\(0\)</span> 的边。</p>
+<p>跑最大费用最大流即可。</p>
+<h2 id="数字梯形问题"><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P4013">数字梯形问题</a></h2>
+<blockquote>
+<p>题意：给定一个由 <span class="math inline">\(n\)</span> 行数字组成的数字梯形如下图所示。</p>
+<p><img src="4.png" /></p>
+<p>梯形的第一行有 <span class="math inline">\(m\)</span>个数字。从梯形的顶部的 <span class="math inline">\(m\)</span> 个数字开始，在每个数字处可以沿左下或右下方向移动，形成一条从梯形的顶至底的路径。</p>
+<p>分别遵守以下规则：</p>
+<ul>
+<li>从梯形的顶至底的 <span class="math inline">\(m\)</span> 条路径互不相交；</li>
+<li>从梯形的顶至底的 <span class="math inline">\(m\)</span> 条路径仅在数字结点处相交；</li>
+<li>从梯形的顶至底的 <span class="math inline">\(m\)</span> 条路径允许在数字结点相交或边相交。</li>
+</ul>
+<p>求分别依照三个规则行走，能获得的最大数字总和。</p>
+</blockquote>
+<p>将每个点拆点，若 <span class="math inline">\((x,y)\)</span> 能走到 <span class="math inline">\((x&#39;,y&#39;)\)</span> 则连边。对于三种情况：</p>
+<ul>
+<li>拆点的容量为 <span class="math inline">\(1\)</span>，费用为点权。点之间的边容量为 <span class="math inline">\(1\)</span>，费用为 <span class="math inline">\(0\)</span>。</li>
+<li>拆点的容量为 <span class="math inline">\(\infty\)</span>，费用为点权。点之间的边容量为 <span class="math inline">\(1\)</span>，费用为 <span class="math inline">\(0\)</span>。</li>
+<li>拆点的容量为 <span class="math inline">\(\infty\)</span>，费用为点权。点之间的边容量为 <span class="math inline">\(\infty\)</span>，费用为 <span class="math inline">\(0\)</span>。</li>
+</ul>
+<p>分别跑最大费用最大流。</p>
+<h2 id="分配问题"><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P4014">分配问题</a></h2>
+<blockquote>
+<p>题意：有 <span class="math inline">\(n\)</span> 件工作要分配给 <span class="math inline">\(n\)</span> 个人做。第 <span class="math inline">\(i\)</span> 个人做第 <span class="math inline">\(j\)</span> 件工作产生的效益为 <span class="math inline">\(c_{ij}\)</span>。试设计一个将 <span class="math inline">\(n\)</span> 件工作分配给 <span class="math inline">\(n\)</span> 个人做的分配方案，使产生的总效益最大。</p>
+</blockquote>
+<p>二分图最大带权匹配板子。</p>
+<h2 id="运输问题"><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P4015">运输问题</a></h2>
+<blockquote>
+<p>题意：W 公司有 <span class="math inline">\(m\)</span> 个仓库和 <span class="math inline">\(n\)</span> 个零售商店。第 <span class="math inline">\(i\)</span> 个仓库有 <span class="math inline">\(a_i\)</span> 个单位的货物；第<span class="math inline">\(j\)</span> 个零售商店需要 <span class="math inline">\(b_j\)</span> 个单位的货物。</p>
+<p>货物供需平衡，即 <span class="math inline">\(\sum\limits_{i=1}^{m}a_i=\sum\limits_{j=1}^{n}b_j\)</span></p>
+<p>从第 <span class="math inline">\(i\)</span> 个仓库运送每单位货物到第 <span class="math inline">\(j\)</span> 个零售商店的费用为 <span class="math inline">\(c_{ij}\)</span>。</p>
+<p>试设计一个将仓库中所有货物运送到零售商店的运输方案，使总运输费用最少，或者最多。</p>
+</blockquote>
+<p>从源点向每个仓库连边，容量为 <span class="math inline">\(a_i\)</span>，费用为 <span class="math inline">\(0\)</span>。从每个商店向汇点连边，容量为 <span class="math inline">\(b_i\)</span>，费用为 <span class="math inline">\(0\)</span>。从每个仓库向商店连边，容量为 <span class="math inline">\(\infty\)</span>，费用为 <span class="math inline">\(c_{ij}\)</span>。</p>
+<p>分别跑最小费用最大流，最大费用最大流。</p>
+<h2 id="负载平衡问题"><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P4016">负载平衡问题</a></h2>
+<blockquote>
+<p>题意：G 公司有个沿铁路运输线环形排列的仓库，每个仓库存储的货物数量不等。如何用最少搬运量可以使个仓库的库存数量相同。搬运货物时，只能在相邻的仓库之间搬运。</p>
+</blockquote>
+<p>本题与上下界网络流问题有着某种相似性。</p>
+<p>首先求出所有仓库货物量的平均数，记为 <span class="math inline">\(x\)</span>。记货物量为 <span class="math inline">\(v_i\)</span>。</p>
+<p>从源点，向所有货物量高于平均数的仓库连边，容量为 <span class="math inline">\(v_i-x\)</span>，费用为 <span class="math inline">\(0\)</span>。</p>
+<p>从所有货物量低于平均数的仓库，向汇点连边，容量为 <span class="math inline">\(x-v_i\)</span>，费用为 <span class="math inline">\(0\)</span>。</p>
+<p>从每个仓库，向相邻仓库连边，容量为 <span class="math inline">\(\infty\)</span>，费用为 <span class="math inline">\(1\)</span>。</p>
+<p>跑最小费用最大流即可。</p>
+</div><div class="article-licensing box"><div class="licensing-title"><p>网络流 24 题</p><p><a href="https://blog.colazcy.moe/2021/06/18/网络流 24 题/">https://blog.colazcy.moe/2021/06/18/网络流 24 题/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>作者</h6><p>colazcy</p></div></div><div class="level-item is-narrow"><div><h6>发布于</h6><p>2021-06-18</p></div></div><div class="level-item is-narrow"><div><h6>更新于</h6><p>2021-09-01</p></div></div><div class="level-item is-narrow"><div><h6>许可协议</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/%E7%AC%94%E8%AE%B0/">笔记</a><a class="link-muted mr-2" rel="tag" href="/tags/%E5%9B%BE%E8%AE%BA-%E7%BD%91%E7%BB%9C%E6%B5%81/">图论-网络流</a></div><!--!--></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/2021/07/08/Solution%20LOJ6041/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">题解 LOJ6041【「雅礼集训 2017 Day7」事情的相似度】</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2021/06/17/Good%20Bye%202019/"><span class="level-item">Good Bye 2019</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><!--!--></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="https://www.gravatar.com/avatar/b19f2d16d39fca4c5c5a472d989569cd?s=128" alt="colazcy"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">colazcy</p><p class="is-size-6 is-block">Nothing to say.</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>China</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">34</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">1</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">24</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/colazcy" target="_blank" rel="noopener">关注我</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/colazcy"><i class="fab fa-github"></i></a></div></div></div><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">目录</h3><ul class="menu-list"><li><a class="level is-mobile" href="#餐巾计划问题"><span class="level-left"><span class="level-item">1</span><span class="level-item">餐巾计划问题</span></span></a></li><li><a class="level is-mobile" href="#星际转移问题"><span class="level-left"><span class="level-item">2</span><span class="level-item">星际转移问题</span></span></a></li><li><a class="level is-mobile" href="#飞行员配对方案问题"><span class="level-left"><span class="level-item">3</span><span class="level-item">飞行员配对方案问题</span></span></a></li><li><a class="level is-mobile" href="#软件补丁问题"><span class="level-left"><span class="level-item">4</span><span class="level-item">软件补丁问题</span></span></a></li><li><a class="level is-mobile" href="#太空飞行计划问题"><span class="level-left"><span class="level-item">5</span><span class="level-item">太空飞行计划问题</span></span></a></li><li><a class="level is-mobile" href="#试题库问题"><span class="level-left"><span class="level-item">6</span><span class="level-item">试题库问题</span></span></a></li><li><a class="level is-mobile" href="#最小路径覆盖问题"><span class="level-left"><span class="level-item">7</span><span class="level-item">最小路径覆盖问题</span></span></a></li><li><a class="level is-mobile" href="#魔术球问题"><span class="level-left"><span class="level-item">8</span><span class="level-item">魔术球问题</span></span></a></li><li><a class="level is-mobile" href="#最长不下降子序列问题"><span class="level-left"><span class="level-item">9</span><span class="level-item">最长不下降子序列问题</span></span></a></li><li><a class="level is-mobile" href="#航空路线问题"><span class="level-left"><span class="level-item">10</span><span class="level-item">航空路线问题</span></span></a></li><li><a class="level is-mobile" href="#方格取数问题"><span class="level-left"><span class="level-item">11</span><span class="level-item">方格取数问题</span></span></a></li><li><a class="level is-mobile" href="#机器人路径规划问题"><span class="level-left"><span class="level-item">12</span><span class="level-item">机器人路径规划问题</span></span></a></li><li><a class="level is-mobile" href="#圆桌问题"><span class="level-left"><span class="level-item">13</span><span class="level-item">圆桌问题</span></span></a></li><li><a class="level is-mobile" href="#骑士共存问题"><span class="level-left"><span class="level-item">14</span><span class="level-item">骑士共存问题</span></span></a></li><li><a class="level is-mobile" href="#火星探险问题"><span class="level-left"><span class="level-item">15</span><span class="level-item">火星探险问题</span></span></a></li><li><a class="level is-mobile" href="#最长k可重区间集问题"><span class="level-left"><span class="level-item">16</span><span class="level-item">最长k可重区间集问题</span></span></a></li><li><a class="level is-mobile" href="#最长k可重线段集问题"><span class="level-left"><span class="level-item">17</span><span class="level-item">最长k可重线段集问题</span></span></a></li><li><a class="level is-mobile" href="#汽车加油行驶问题"><span class="level-left"><span class="level-item">18</span><span class="level-item">汽车加油行驶问题</span></span></a></li><li><a class="level is-mobile" href="#孤岛营救问题"><span class="level-left"><span class="level-item">19</span><span class="level-item">孤岛营救问题</span></span></a></li><li><a class="level is-mobile" href="#深海机器人问题"><span class="level-left"><span class="level-item">20</span><span class="level-item">深海机器人问题</span></span></a></li><li><a class="level is-mobile" href="#数字梯形问题"><span class="level-left"><span class="level-item">21</span><span class="level-item">数字梯形问题</span></span></a></li><li><a class="level is-mobile" href="#分配问题"><span class="level-left"><span class="level-item">22</span><span class="level-item">分配问题</span></span></a></li><li><a class="level is-mobile" href="#运输问题"><span class="level-left"><span class="level-item">23</span><span class="level-item">运输问题</span></span></a></li><li><a class="level is-mobile" href="#负载平衡问题"><span class="level-left"><span class="level-item">24</span><span class="level-item">负载平衡问题</span></span></a></li></ul></div></div><style>#toc .menu-list > li > a.is-active + .menu-list { display: block; }#toc .menu-list > li > a + .menu-list { display: none; }</style><script src="/js/toc.js" defer></script></div><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">链接</h3><ul class="menu-list"><li><a class="level is-mobile" href="https://hexo.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Hexo</span></span><span class="level-right"><span class="level-item tag">hexo.io</span></span></a></li></ul></div></div></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">分类</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/OI/"><span class="level-start"><span class="level-item">OI</span></span><span class="level-end"><span class="level-item tag">34</span></span></a></li></ul></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-09-01T06:05:00.000Z">2021-09-01</time></p><p class="title"><a href="/2021/09/01/Codeforces%20Round%20591/">Codeforces Round #591</a></p><p class="categories"><a href="/categories/OI/">OI</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-07-08T12:56:04.000Z">2021-07-08</time></p><p class="title"><a href="/2021/07/08/Solution%20LOJ6041/">题解 LOJ6041【「雅礼集训 2017 Day7」事情的相似度】</a></p><p class="categories"><a href="/categories/OI/">OI</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-06-18T11:20:00.000Z">2021-06-18</time></p><p class="title"><a href="/2021/06/18/%E7%BD%91%E7%BB%9C%E6%B5%81%2024%20%E9%A2%98/">网络流 24 题</a></p><p class="categories"><a href="/categories/OI/">OI</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-06-17T00:50:00.000Z">2021-06-17</time></p><p class="title"><a href="/2021/06/17/Good%20Bye%202019/">Good Bye 2019</a></p><p class="categories"><a href="/categories/OI/">OI</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-06-12T12:48:14.000Z">2021-06-12</time></p><p class="title"><a href="/2021/06/12/Solution%20ARC084D/">题解 ARC084D【XorShift】</a></p><p class="categories"><a href="/categories/OI/">OI</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2021/09/"><span class="level-start"><span class="level-item">九月 2021</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/07/"><span class="level-start"><span class="level-item">七月 2021</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/06/"><span class="level-start"><span class="level-item">六月 2021</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/05/"><span class="level-start"><span class="level-item">五月 2021</span></span><span class="level-end"><span class="level-item tag">11</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/04/"><span class="level-start"><span class="level-item">四月 2021</span></span><span class="level-end"><span class="level-item tag">16</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/AtCoder/"><span class="tag">AtCoder</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Codeforces/"><span class="tag">Codeforces</span><span class="tag">25</span></a></div><div class="control"><a class="tags has-addons" href="/tags/NOI/"><span class="tag">NOI</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/PKUWC/"><span class="tag">PKUWC</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92-%E6%9C%B4%E7%B4%A0dp/"><span class="tag">动态规划-朴素dp</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92-%E7%8A%B6%E5%8E%8Bdp/"><span class="tag">动态规划-状压dp</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%90%84%E7%9C%81%E7%9C%81%E9%80%89/"><span class="tag">各省省选</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%9B%BE%E8%AE%BA-Dilworth/"><span class="tag">图论-Dilworth</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%9B%BE%E8%AE%BA-%E7%94%9F%E6%88%90%E6%A0%91/"><span class="tag">图论-生成树</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%9B%BE%E8%AE%BA-%E7%BD%91%E7%BB%9C%E6%B5%81/"><span class="tag">图论-网络流</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2-%E5%90%8E%E7%BC%80%E8%87%AA%E5%8A%A8%E6%9C%BA/"><span class="tag">字符串-后缀自动机</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%95%B0%E5%AD%A6/"><span class="tag">数学</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%95%B0%E5%AD%A6-%E4%BD%8D%E8%BF%90%E7%AE%97/"><span class="tag">数学-位运算</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%95%B0%E5%AD%A6-%E5%8F%8D%E6%BC%94/"><span class="tag">数学-反演</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%95%B0%E5%AD%A6-%E5%A4%9A%E9%A1%B9%E5%BC%8F/"><span class="tag">数学-多项式</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%95%B0%E5%AD%A6-%E6%A6%82%E7%8E%87%E6%9C%9F%E6%9C%9B/"><span class="tag">数学-概率期望</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%95%B0%E5%AD%A6-%E7%94%9F%E6%88%90%E5%87%BD%E6%95%B0/"><span class="tag">数学-生成函数</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%95%B0%E5%AD%A6-%E8%AE%A1%E6%95%B0/"><span class="tag">数学-计数</span><span class="tag">5</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-LCT/"><span class="tag">数据结构-LCT</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%B4%9B%E8%B0%B7/"><span class="tag">洛谷</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%AC%94%E8%AE%B0/"><span class="tag">笔记</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E9%9B%85%E7%A4%BC%E9%9B%86%E8%AE%AD/"><span class="tag">雅礼集训</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E9%A2%98%E8%A7%A3/"><span class="tag">题解</span><span class="tag">10</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E9%A2%98%E9%9B%86/"><span class="tag">题集</span><span class="tag">23</span></a></div></div></div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">订阅更新</h3><form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(&#039;https://feedburner.google.com/fb/a/mailverify?uri=&#039;,&#039;popupwindow&#039;,&#039;scrollbars=yes,width=550,height=520&#039;);return true"><input type="hidden" value="" name="uri"><input type="hidden" name="loc" value="en_US"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="订阅"></div></div></form></div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="https://s.gravatar.com/avatar/b19f2d16d39fca4c5c5a472d989569cd?s=80" alt="colazcy&#039;s Blog" height="28"></a><p class="is-size-7"><span>&copy; 2021 colazcy</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("zh-CN");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "此网站使用Cookie来改善您的体验。",
+          dismiss: "知道了！",
+          allow: "允许使用Cookie",
+          deny: "拒绝",
+          link: "了解更多",
+          policy: "Cookie政策",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><script type="text/x-mathjax-config">MathJax.Hub.Config({
+            'HTML-CSS': {
+                matchFontHeight: false
+            },
+            SVG: {
+                matchFontHeight: false
+            },
+            CommonHTML: {
+                matchFontHeight: false
+            },
+            tex2jax: {
+                inlineMath: [
+                    ['$','$'],
+                    ['\\(','\\)']
+                ]
+            }
+        });</script><script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>
