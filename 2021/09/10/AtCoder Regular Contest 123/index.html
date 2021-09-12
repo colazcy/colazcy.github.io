@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>AtCoder Regular Contest 123 - colazcy&#039;s Blog</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="colazcy&#039;s Blog"><meta name="msapplication-TileImage" content="https://s.gravatar.com/avatar/b19f2d16d39fca4c5c5a472d989569cd?s=80"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="colazcy&#039;s Blog"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="AtCoder Regular Contest 123"><meta property="og:type" content="blog"><meta property="og:title" content="AtCoder Regular Contest 123"><meta property="og:url" content="https://blog.colazcy.moe/2021/09/10/AtCoder%20Regular%20Contest%20123/"><meta property="og:site_name" content="colazcy&#039;s Blog"><meta property="og:description" content="AtCoder Regular Contest 123"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://blog.colazcy.moe/img/og_image.png"><meta property="article:published_time" content="2021-09-10T00:10:00.000Z"><meta property="article:modified_time" content="2021-09-12T14:06:24.089Z"><meta property="article:author" content="colazcy"><meta property="article:tag" content="题集"><meta property="article:tag" content="AtCoder"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://blog.colazcy.moe/2021/09/10/AtCoder%20Regular%20Contest%20123/"},"headline":"AtCoder Regular Contest 123","image":["https://blog.colazcy.moe/img/og_image.png"],"datePublished":"2021-09-10T00:10:00.000Z","dateModified":"2021-09-12T14:06:24.089Z","author":{"@type":"Person","name":"colazcy"},"publisher":{"@type":"Organization","name":"colazcy's Blog","logo":{"@type":"ImageObject","url":"https://s.gravatar.com/avatar/b19f2d16d39fca4c5c5a472d989569cd?s=80"}},"description":"AtCoder Regular Contest 123"}</script><link rel="canonical" href="https://blog.colazcy.moe/2021/09/10/AtCoder%20Regular%20Contest%20123/"><link rel="icon" href="https://s.gravatar.com/avatar/b19f2d16d39fca4c5c5a472d989569cd?s=80"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css"><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script><!--!--><!--!--><meta name="generator" content="Hexo 5.4.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="https://s.gravatar.com/avatar/b19f2d16d39fca4c5c5a472d989569cd?s=80" alt="colazcy&#039;s Blog" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2021-09-10T00:10:00.000Z" title="9/10/2021, 8:10:00 AM">2021-09-10</time>发表</span><span class="level-item"><time dateTime="2021-09-12T14:06:24.089Z" title="9/12/2021, 10:06:24 PM">2021-09-12</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/OI/">OI</a></span><span class="level-item">12 分钟读完 (大约1817个字)</span></div></div><h1 class="title is-3 is-size-4-mobile">AtCoder Regular Contest 123</h1><div class="content"><p><a target="_blank" rel="noopener" href="https://atcoder.jp/contests/arc123">AtCoder Regular Contest 123</a></p>
+<span id="more"></span>
+<h2 id="a.arithmetic-sequence"><a target="_blank" rel="noopener" href="https://atcoder.jp/contests/arc123/tasks/arc123_a">A.Arithmetic Sequence</a></h2>
+<blockquote>
+<p>题意：给定 <span class="math inline">\(a,b,c\)</span>，每次操作为 <span class="math inline">\(a \leftarrow a + 1\)</span>，或 <span class="math inline">\(b \leftarrow b + 1\)</span>，或 <span class="math inline">\(c \leftarrow c + 1\)</span>。求最小的操作次数使得 <span class="math inline">\(b - a = c - b\)</span>。</p>
+<p><span class="math inline">\(a,b,c \leq 10^{15}\)</span>。</p>
+<p>2s，1024M。</p>
+</blockquote>
+<p>移项可得 <span class="math inline">\(2b = a+c\)</span>。</p>
+<p>先操作 <span class="math inline">\(b\)</span> 使得 <span class="math inline">\(2b \geq a+c\)</span>，再操作 <span class="math inline">\(a,c\)</span> 即可。</p>
+<p>时间复杂度 <span class="math inline">\(\Theta(1)\)</span>。</p>
+<p><a target="_blank" rel="noopener" href="https://atcoder.jp/contests/arc123/submissions/25713690">Code</a></p>
+<h2 id="b.increasing-triples"><a target="_blank" rel="noopener" href="https://atcoder.jp/contests/arc123/tasks/arc123_b">B.Increasing Triples</a></h2>
+<blockquote>
+<p>题意：给定三个序列 <span class="math inline">\(a,b,c\)</span>，你可以将它们任意重排，使得 <span class="math inline">\(a_i &lt; b_i &lt; c_i\)</span> 的位置 <span class="math inline">\(i\)</span> 尽量多。求最多的位置数。</p>
+<p><span class="math inline">\(1 \leq n \leq 10^5\)</span>，</p>
+<p><span class="math inline">\(1 \leq a_i,b_i,c_i \leq 10^9\)</span>。</p>
+<p>2s，1024M。</p>
+</blockquote>
+<p>因为可以任意重排，所以转化为选取三元组。根据决策包容性，我们肯定贪心选最小的 <span class="math inline">\(a_i\)</span>，<span class="math inline">\(a_i\)</span> 确定之后选择可能的最小 <span class="math inline">\(b_i\)</span>，然后选择可能的最小 <span class="math inline">\(c_i\)</span>。</p>
+<p>排好序之后直接二分查找。</p>
+<p><a target="_blank" rel="noopener" href="https://atcoder.jp/contests/arc123/submissions/25713731">Code</a></p>
+<h2 id="c.1-2-3---decomposition"><a target="_blank" rel="noopener" href="https://atcoder.jp/contests/arc123/tasks/arc123_c">C.1, 2, 3 - Decomposition</a></h2>
+<blockquote>
+<p>题意：给定 <span class="math inline">\(n\)</span>，求最小的 <span class="math inline">\(k\)</span>，使得存在一个正整数序列 <span class="math inline">\(a_1,a_2,\cdots,a_k\)</span>，使得 <span class="math inline">\(\sum_{i=1}^k a_i=n\)</span>，且 <span class="math inline">\(a_i\)</span> 十进制表示下的每一位属于 <span class="math inline">\(\{1,2,3\}\)</span>。</p>
+<p><span class="math inline">\(t\)</span> 组询问。</p>
+<p><span class="math inline">\(1\leq t \leq 1000\)</span>。</p>
+<p><span class="math inline">\(1\leq n \leq 10^{18}\)</span>。</p>
+<p>2s，1024M。</p>
+</blockquote>
+<p>答案不会太大，我们可以枚举 <span class="math inline">\(k\)</span> 并检验。归纳法可以证明答案不超过 <span class="math inline">\(5\)</span>，<a target="_blank" rel="noopener" href="https://atcoder.jp/contests/arc123/editorial/2317">题解</a>给出了证明。</p>
+<p>从低位往高位考虑。发现只要该位不为 <span class="math inline">\(0\)</span> 的 <span class="math inline">\(a_i\)</span> 个数确定了，更低位对它的进位确定了，那么可以确定该位的选数方案。</p>
+<p>因此我们可以记 <span class="math inline">\(f[step][now][cnt]\)</span> 表示当前是第 <span class="math inline">\(step\)</span> 位，有 <span class="math inline">\(now\)</span> 位不为 <span class="math inline">\(0\)</span>，低位的进位为 <span class="math inline">\(cnt\)</span>。</p>
+<p>枚举 <span class="math inline">\(i \in [now,3now]\)</span>，若 <span class="math inline">\(i + cnt \equiv n_{step} \pmod {10}\)</span>，则转移到 <span class="math inline">\(f[step + 1][nxt][\lfloor \frac{i + cnt}{10}\rfloor] \quad nxt \leq now\)</span>，直接记忆化搜索。</p>
+<p><a target="_blank" rel="noopener" href="https://atcoder.jp/contests/arc123/submissions/25714019">Code</a></p>
+<h2 id="d.inc-dec---decomposition"><a target="_blank" rel="noopener" href="https://atcoder.jp/contests/arc123/tasks/arc123_d">D.Inc, Dec - Decomposition</a></h2>
+<blockquote>
+<p>题意：给定长为 <span class="math inline">\(n\)</span> 的序列 <span class="math inline">\(a\)</span>，构造长为 <span class="math inline">\(n\)</span> 的序列 <span class="math inline">\(b,c\)</span>。满足：</p>
+<ul>
+<li><p><span class="math inline">\(a = b_i + c_i\)</span>。</p></li>
+<li><p>序列 <span class="math inline">\(b\)</span> 单调不降。</p></li>
+<li><p>序列 <span class="math inline">\(c\)</span> 单调不升。</p></li>
+</ul>
+<p><span class="math inline">\(1 \leq n \leq 2\times 10^5\)</span>。</p>
+<p><span class="math inline">\(-10^8 \leq a_i \leq 10^8\)</span>。</p>
+<p>2s，1024M。</p>
+</blockquote>
+<p>似乎 Slope Trick 相较于线性做法更为通用？</p>
+<p>可以在 <a target="_blank" rel="noopener" href="https://usaco.guide/adv/slope-trick/">USACO</a>，<a target="_blank" rel="noopener" href="https://codeforces.com/blog/entry/47821">zscoder's blog</a>，<a target="_blank" rel="noopener" href="https://codeforces.com/blog/entry/77298">Kuroni's blog</a> 找到相关资料。</p>
+<p>简言之，Slope Trick 可以用来表示满足以下特征的函数：</p>
+<ul>
+<li>连续</li>
+<li>是凸函数（即斜率单调）</li>
+<li>可以分为若干段，每段均为一次函数</li>
+</ul>
+<p>我们可以用一个可重集 <span class="math inline">\(S\)</span> 以及一个一次函数 <span class="math inline">\(y = kx + b\)</span> 来表示一个满足以上特征的函数，可重集 <span class="math inline">\(S\)</span> 内的每个位置 <span class="math inline">\(p\)</span> 表示在 <span class="math inline">\(p\)</span> 点斜率改变 <span class="math inline">\(1\)</span>（斜率可能改变不止 <span class="math inline">\(1\)</span>，所以是个可重集） 。<span class="math inline">\(y = kx + b\)</span> 表示该函数最靠右的一段是一次函数 <span class="math inline">\(y = kx + b\)</span>。</p>
+<p>有了 <span class="math inline">\(y = kx + b\)</span>，我们可以从大到小遍历 <span class="math inline">\(S\)</span>，从而确定函数每一段。</p>
+<p>利用 Slope Trick，我们可以方便的表示出 <span class="math inline">\(F(x) + G(x)\)</span>，其中 <span class="math inline">\(F(x),G(x)\)</span> 都满足以上特征并且它们都是上（下）凸的。二者最右段一次函数直接相加，两个可重集直接合并。（类似于扫描线，每个元素都代表斜率改变 <span class="math inline">\(1\)</span> 这个事件，所以可以直接合并）。</p>
+<p>对于这道题，题意可以转化为，给定序列 <span class="math inline">\(a,b\)</span>。求序列 <span class="math inline">\(x\)</span>，在 <span class="math inline">\(x_i + a_i \leq x_{i+1}\)</span> 的前提下，最小化 <span class="math inline">\(|x_i|+|x_i-b_i|\)</span>。</p>
+<p>有平方级别的 dp：记 <span class="math inline">\(f_i[x]\)</span> 表示考虑序列 <span class="math inline">\(x\)</span> 的前 <span class="math inline">\(i\)</span> 项，并且 <span class="math inline">\(x_i = x\)</span>，答案的最小值。<span class="math inline">\(g_i\)</span> 为 <span class="math inline">\(f_i\)</span> 的前缀 <span class="math inline">\(\min\)</span>。</p>
+<p>那么有 <span class="math inline">\(f_i[x] = g_{i-1}[x-a_i]+|x|+|x-b_i|\)</span>。</p>
+<p>显然 <span class="math inline">\(|x| + |x-b_i|\)</span> 符合上述特征，对于函数平移直接整体打标记即可。</p>
+<p><a target="_blank" rel="noopener" href="https://atcoder.jp/contests/arc123/submissions/25813734">Code</a></p>
+<h2 id="e.training"><a target="_blank" rel="noopener" href="https://atcoder.jp/contests/arc123/tasks/arc123_e">E.Training</a></h2>
+<blockquote>
+<p>题意：给定 <span class="math inline">\(A,B,C,D,n\)</span>。求 <span class="math inline">\(\sum_{x=1}^{n}[(A+\lfloor\frac{B}{x}\rfloor) = (C+\lfloor\frac{D}{x}\rfloor)]\)</span>。</p>
+<p><span class="math inline">\(t\)</span> 组询问。</p>
+<p><span class="math inline">\(1 \leq t \leq 2\times10^5\)</span>。</p>
+<p><span class="math inline">\(1 \leq n \leq 10^9\)</span>。</p>
+<p><span class="math inline">\(1 \leq A,B,C,D \leq 10^6\)</span>。</p>
+<p>3s，1024M。</p>
+</blockquote>
+<p>记 <span class="math inline">\(f(x) = A + \frac{B}{x},g(x)=C+\frac{D}{x},F(x)=\lfloor f(x)\rfloor,G(x) = \lfloor g(x)\rfloor\)</span>。</p>
+<p>若 <span class="math inline">\(F(x) = G(x)\)</span>，一定有 <span class="math inline">\(|f(x)-g(x)| \leq 1\)</span>。</p>
+<p>一次函数交点容易计算。</p>
+<p>假设 <span class="math inline">\(0 \leq f(x)-g(x) \leq 1\)</span>，另一种情况同理。那么 <span class="math inline">\(F(x)=G(x)\)</span> 或 <span class="math inline">\(F(x)=G(x)+1\)</span>。我们现在要求 <span class="math inline">\(\sum_{x=l}^r[F(x)=G(x)]\)</span>。有：</p>
+<p><span class="math display">\[
+\begin{aligned}
+\sum_{x=l}^{r}[F(x)=G(x)]&amp;=(r-l+1)-\sum_{x=l}^r[F(x)=G(x)+1]\\
+&amp;=(r-l+1)-\sum_{x=l}^r(F(x)-G(x))
+\end{aligned}
+\]</span> 求 <span class="math inline">\(\sum_{x=l}^rF(x)\)</span>，等价于求 <span class="math inline">\(\sum_{x=0}^nF(x)\)</span>，可以 <span class="math inline">\(\Theta(1)\)</span> 求出。</p>
+<p><a target="_blank" rel="noopener" href="https://atcoder.jp/contests/arc123/submissions/25719579">Code</a></p>
+<h2 id="f.insert-addition"><a target="_blank" rel="noopener" href="https://atcoder.jp/contests/arc123/tasks/arc123_f">F.Insert Addition</a></h2>
+<blockquote>
+<p>题意：对于序列 <span class="math inline">\(p = (p_1,p_2,\cdots,p_m)\)</span>，定义函数 <span class="math inline">\(f(p) = (p_1,q_1,p_2,q_2,\cdots,p_{m-1},q_{m-1},p_m)\)</span>，其中 <span class="math inline">\(q_i=p_{i}+p_{i+1}\)</span>。给定的序列 <span class="math inline">\(A = (p,q)\)</span>，每次令 <span class="math inline">\(A \leftarrow f(A)\)</span>，重复 <span class="math inline">\(n\)</span> 次。之后删去所有大于 <span class="math inline">\(n\)</span> 的元素得到序列 <span class="math inline">\(B\)</span>。给定 <span class="math inline">\(l,r\)</span>，求 <span class="math inline">\(B_l,B_{l+1},\cdots B_r\)</span>。</p>
+<p><span class="math inline">\(1 \leq n \leq 3\times 10^5\)</span>。</p>
+<p><span class="math inline">\(1 \leq a,b \leq n\)</span>。</p>
+<p><span class="math inline">\(1 \leq l \leq r \leq 10^{18}\)</span>。</p>
+<p><span class="math inline">\(r - l &lt; 3 \times 10^5\)</span>。</p>
+<p>4s，1024M。</p>
+</blockquote>
+<p>前置知识：<a target="_blank" rel="noopener" href="https://oi-wiki.org/math/number-theory/stern-brocot/">Stern-Brocot 树与 Farey 序列</a>。</p>
+<p>初始序列为 <span class="math inline">\(\frac{1}{0},\frac{0}{1}\)</span>。</p>
+<p>每次在相邻两个分数 <span class="math inline">\(\frac{a}{b},\frac{c}{d}\)</span> 中间插入分数 <span class="math inline">\(\frac{a + c}{b + d}\)</span>。</p>
+<p>一些性质：</p>
+<ul>
+<li><strong>单调性</strong></li>
+</ul>
+<p>容易证明，类似于溶液混合，有 <span class="math inline">\(\frac{a}{b} &lt; \frac{a + c}{b + d} &lt; \frac{c}{d}\)</span>。</p>
+<ul>
+<li><strong>最简性</strong></li>
+</ul>
+<p>序列中的分数均为最简分数。</p>
+<p>归纳法可以证明对于任意连续分数 <span class="math inline">\(\frac{a}{b},\frac{c}{d}\)</span>，有 <span class="math inline">\(bc - ad = 1\)</span>。</p>
+<p>因此根据裴蜀定理，上述方程有解，因此 <span class="math inline">\(\gcd(a,b) = \gcd(c,d) = 1\)</span>。</p>
+<p>原问题与之十分类似。由于 <span class="math inline">\(n\)</span> 次操作后新得到的数一定大于 <span class="math inline">\(n\)</span>，所以我们可以忽略只操作 <span class="math inline">\(n\)</span> 次这个限制。对于相邻两个数 <span class="math inline">\(p,q\)</span>，它们之间的数一定可以表示为 <span class="math inline">\(px + qy \quad \gcd(x,y) = 1\)</span> 的形式。</p>
+<p>现在我们可以把这棵树当做线段树，问题变成，对给定的 <span class="math inline">\(p,q,n\)</span>，求 <span class="math inline">\(\gcd(x,y) = 1,px + qy \leq n\)</span> 的 <span class="math inline">\((x,y)\)</span> 的对数。</p>
+<p>使用莫比乌斯反演，不考虑 <span class="math inline">\(\gcd(x,y)=1\)</span> 的限制容易处理，记其为 <span class="math inline">\(g(n)\)</span>。记考虑 <span class="math inline">\(\gcd(x,y) = 1\)</span>的限制时的答案为 <span class="math inline">\(f(n)\)</span>。</p>
+<p>有 <span class="math inline">\(g(n) = \sum_d f(\lfloor \frac{n}{d}\rfloor)\)</span>。</p>
+<p>所以有 <span class="math inline">\(f(n) = \sum_d \mu(d) g(\lfloor \frac{n}{d}\rfloor)\)</span>。</p>
+<p>注意一下实现方式。</p>
+<p><a target="_blank" rel="noopener" href="https://atcoder.jp/contests/arc123/submissions/25723969">Code</a></p>
+</div><div class="article-licensing box"><div class="licensing-title"><p>AtCoder Regular Contest 123</p><p><a href="https://blog.colazcy.moe/2021/09/10/AtCoder Regular Contest 123/">https://blog.colazcy.moe/2021/09/10/AtCoder Regular Contest 123/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>作者</h6><p>colazcy</p></div></div><div class="level-item is-narrow"><div><h6>发布于</h6><p>2021-09-10</p></div></div><div class="level-item is-narrow"><div><h6>更新于</h6><p>2021-09-12</p></div></div><div class="level-item is-narrow"><div><h6>许可协议</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/%E9%A2%98%E9%9B%86/">题集</a><a class="link-muted mr-2" rel="tag" href="/tags/AtCoder/">AtCoder</a></div><!--!--></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2021/09/01/Codeforces%20Round%20591/"><span class="level-item">Codeforces Round #591</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><!--!--></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="https://www.gravatar.com/avatar/b19f2d16d39fca4c5c5a472d989569cd?s=128" alt="colazcy"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">colazcy</p><p class="is-size-6 is-block">Nothing to say.</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>China</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">35</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">1</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">24</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/colazcy" target="_blank" rel="noopener">关注我</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/colazcy"><i class="fab fa-github"></i></a></div></div></div><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">目录</h3><ul class="menu-list"><li><a class="level is-mobile" href="#a.arithmetic-sequence"><span class="level-left"><span class="level-item">1</span><span class="level-item">A.Arithmetic Sequence</span></span></a></li><li><a class="level is-mobile" href="#b.increasing-triples"><span class="level-left"><span class="level-item">2</span><span class="level-item">B.Increasing Triples</span></span></a></li><li><a class="level is-mobile" href="#c.1-2-3---decomposition"><span class="level-left"><span class="level-item">3</span><span class="level-item">C.1, 2, 3 - Decomposition</span></span></a></li><li><a class="level is-mobile" href="#d.inc-dec---decomposition"><span class="level-left"><span class="level-item">4</span><span class="level-item">D.Inc, Dec - Decomposition</span></span></a></li><li><a class="level is-mobile" href="#e.training"><span class="level-left"><span class="level-item">5</span><span class="level-item">E.Training</span></span></a></li><li><a class="level is-mobile" href="#f.insert-addition"><span class="level-left"><span class="level-item">6</span><span class="level-item">F.Insert Addition</span></span></a></li></ul></div></div><style>#toc .menu-list > li > a.is-active + .menu-list { display: block; }#toc .menu-list > li > a + .menu-list { display: none; }</style><script src="/js/toc.js" defer></script></div><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">链接</h3><ul class="menu-list"><li><a class="level is-mobile" href="https://hexo.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Hexo</span></span><span class="level-right"><span class="level-item tag">hexo.io</span></span></a></li></ul></div></div></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">分类</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/OI/"><span class="level-start"><span class="level-item">OI</span></span><span class="level-end"><span class="level-item tag">35</span></span></a></li></ul></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-09-10T00:10:00.000Z">2021-09-10</time></p><p class="title"><a href="/2021/09/10/AtCoder%20Regular%20Contest%20123/">AtCoder Regular Contest 123</a></p><p class="categories"><a href="/categories/OI/">OI</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-09-01T06:05:00.000Z">2021-09-01</time></p><p class="title"><a href="/2021/09/01/Codeforces%20Round%20591/">Codeforces Round #591</a></p><p class="categories"><a href="/categories/OI/">OI</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-07-08T12:56:04.000Z">2021-07-08</time></p><p class="title"><a href="/2021/07/08/Solution%20LOJ6041/">题解 LOJ6041【「雅礼集训 2017 Day7」事情的相似度】</a></p><p class="categories"><a href="/categories/OI/">OI</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-06-18T11:20:00.000Z">2021-06-18</time></p><p class="title"><a href="/2021/06/18/%E7%BD%91%E7%BB%9C%E6%B5%81%2024%20%E9%A2%98/">网络流 24 题</a></p><p class="categories"><a href="/categories/OI/">OI</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-06-17T00:50:00.000Z">2021-06-17</time></p><p class="title"><a href="/2021/06/17/Good%20Bye%202019/">Good Bye 2019</a></p><p class="categories"><a href="/categories/OI/">OI</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2021/09/"><span class="level-start"><span class="level-item">九月 2021</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/07/"><span class="level-start"><span class="level-item">七月 2021</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/06/"><span class="level-start"><span class="level-item">六月 2021</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/05/"><span class="level-start"><span class="level-item">五月 2021</span></span><span class="level-end"><span class="level-item tag">11</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/04/"><span class="level-start"><span class="level-item">四月 2021</span></span><span class="level-end"><span class="level-item tag">16</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/AtCoder/"><span class="tag">AtCoder</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Codeforces/"><span class="tag">Codeforces</span><span class="tag">25</span></a></div><div class="control"><a class="tags has-addons" href="/tags/NOI/"><span class="tag">NOI</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/PKUWC/"><span class="tag">PKUWC</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92-%E6%9C%B4%E7%B4%A0dp/"><span class="tag">动态规划-朴素dp</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92-%E7%8A%B6%E5%8E%8Bdp/"><span class="tag">动态规划-状压dp</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%90%84%E7%9C%81%E7%9C%81%E9%80%89/"><span class="tag">各省省选</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%9B%BE%E8%AE%BA-Dilworth/"><span class="tag">图论-Dilworth</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%9B%BE%E8%AE%BA-%E7%94%9F%E6%88%90%E6%A0%91/"><span class="tag">图论-生成树</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%9B%BE%E8%AE%BA-%E7%BD%91%E7%BB%9C%E6%B5%81/"><span class="tag">图论-网络流</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2-%E5%90%8E%E7%BC%80%E8%87%AA%E5%8A%A8%E6%9C%BA/"><span class="tag">字符串-后缀自动机</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%95%B0%E5%AD%A6/"><span class="tag">数学</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%95%B0%E5%AD%A6-%E4%BD%8D%E8%BF%90%E7%AE%97/"><span class="tag">数学-位运算</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%95%B0%E5%AD%A6-%E5%8F%8D%E6%BC%94/"><span class="tag">数学-反演</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%95%B0%E5%AD%A6-%E5%A4%9A%E9%A1%B9%E5%BC%8F/"><span class="tag">数学-多项式</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%95%B0%E5%AD%A6-%E6%A6%82%E7%8E%87%E6%9C%9F%E6%9C%9B/"><span class="tag">数学-概率期望</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%95%B0%E5%AD%A6-%E7%94%9F%E6%88%90%E5%87%BD%E6%95%B0/"><span class="tag">数学-生成函数</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%95%B0%E5%AD%A6-%E8%AE%A1%E6%95%B0/"><span class="tag">数学-计数</span><span class="tag">5</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-LCT/"><span class="tag">数据结构-LCT</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%B4%9B%E8%B0%B7/"><span class="tag">洛谷</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%AC%94%E8%AE%B0/"><span class="tag">笔记</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E9%9B%85%E7%A4%BC%E9%9B%86%E8%AE%AD/"><span class="tag">雅礼集训</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E9%A2%98%E8%A7%A3/"><span class="tag">题解</span><span class="tag">10</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E9%A2%98%E9%9B%86/"><span class="tag">题集</span><span class="tag">24</span></a></div></div></div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">订阅更新</h3><form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(&#039;https://feedburner.google.com/fb/a/mailverify?uri=&#039;,&#039;popupwindow&#039;,&#039;scrollbars=yes,width=550,height=520&#039;);return true"><input type="hidden" value="" name="uri"><input type="hidden" name="loc" value="en_US"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="订阅"></div></div></form></div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="https://s.gravatar.com/avatar/b19f2d16d39fca4c5c5a472d989569cd?s=80" alt="colazcy&#039;s Blog" height="28"></a><p class="is-size-7"><span>&copy; 2021 colazcy</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("zh-CN");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "此网站使用Cookie来改善您的体验。",
+          dismiss: "知道了！",
+          allow: "允许使用Cookie",
+          deny: "拒绝",
+          link: "了解更多",
+          policy: "Cookie政策",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><script type="text/x-mathjax-config">MathJax.Hub.Config({
+            'HTML-CSS': {
+                matchFontHeight: false
+            },
+            SVG: {
+                matchFontHeight: false
+            },
+            CommonHTML: {
+                matchFontHeight: false
+            },
+            tex2jax: {
+                inlineMath: [
+                    ['$','$'],
+                    ['\\(','\\)']
+                ]
+            }
+        });</script><script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>
